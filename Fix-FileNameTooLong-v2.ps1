@@ -1,3 +1,22 @@
+# Tag: EnableLongPathsGit
+
+# Ensure the script is running with administrative privileges
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
+{
+    Write-Warning "Please run this script as an Administrator."
+    exit
+}
+
+# Enable long path support in Git
+try {
+    git config --global core.longPaths true
+    Write-Host "Git is now configured to support long paths."
+} catch {
+    Write-Error "Failed to configure Git: $_"
+}
+
+
+
 # Check if the LongPathsEnabled registry entry exists and create it if it doesn't
 if (-not (Test-Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled")) {
     New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
@@ -13,7 +32,7 @@ $longPathsEnabled = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Contr
 Write-Host "LongPathsEnabled is set to:" $longPathsEnabled.LongPathsEnabled
 
 
-git config --system core.longpaths true
+# git config --system core.longpaths true
 
 
 #Then try cloing with GitHub Desktop, GitHub CLI or Git.exe 
