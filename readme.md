@@ -31,7 +31,7 @@ The tool provides detailed reports of files and folders that exceed specified pa
 
 1. Clone the repository:
 ```powershell
-git clone https://github.com/YourUsername/WinPathScan.git
+git clone https://github.com/aollivierre/WinPathScan.git
 ```
 
 2. Install required PowerShell modules (requires PowerShell 5.1):
@@ -123,7 +123,7 @@ MIT License - feel free to use and modify as needed.
 
 ## Author
 
-[Your Name/Organization]
+[AOllivierre]
 
 ## Version History
 
