@@ -90,7 +90,7 @@ Reports include:
 - Requires appropriate permissions to access scanned directories
 - Some features require administrator privileges
 - Performance may vary with large directory structures
-- HTML report generation requires Internet Explorer 11 or higher installed
+- HTML report generation requires Edge, Chrome or FireFox or Safari or any modern Chromium based browser
 
 ## Best Practices
 
